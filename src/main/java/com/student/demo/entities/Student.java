@@ -1,17 +1,26 @@
 package com.student.demo.entities;
 
+import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.Period;
 import java.util.ArrayList;
 
+@Entity
+@Table(name = "student")
 public class Student {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
+    private Long id;
+
+    @Column(name = "firstName")
     private String firstName;
-
+    @Column
     private String lastName;
-
+    @Column
     private String birthDate;
-
+    @Column
     private String grades;
 
     public Student (){
@@ -103,8 +112,5 @@ public class Student {
 
 
     }
-
-
-
 
 }

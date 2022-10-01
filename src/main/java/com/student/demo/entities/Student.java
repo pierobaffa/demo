@@ -16,11 +16,11 @@ public class Student {
 
     @Column(name = "firstName")
     private String firstName;
-    @Column
+    @Column(name = "lastName")
     private String lastName;
-    @Column
+    @Column(name = "birthDate")
     private String birthDate;
-    @Column
+    @Column(name = "grades")
     private String grades;
 
     public Student (){

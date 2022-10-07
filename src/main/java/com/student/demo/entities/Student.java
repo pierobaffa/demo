@@ -77,7 +77,6 @@ public class Student {
     }
 
 
-
     /** return student age **/
     public int age (String birthDate) {
 
@@ -104,13 +103,6 @@ public class Student {
 
         media = media/voti.size();
         return media;
-    }
-
-
-
-    public static void main (String [] args) {
-
-
     }
 
 }

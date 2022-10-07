@@ -17,7 +17,12 @@ public class StudentService {
 
     public Student getStudent(Long id) {return studentRepository.findById(id).get();}
 
-    public void createStudent(Student studente) {studentRepository.save(studente);}
+    public void createStudent(Student studente) throws Exception {
+        if((studente.getFirstName() == null || studente.getLastName() == null)){
+            throw new Exception("firstName e lastName devono essere valorizzati");
+        }
+
+        studentRepository.save(studente);}
 
     public void removeStudent(Long id) {studentRepository.deleteById(id);}
 

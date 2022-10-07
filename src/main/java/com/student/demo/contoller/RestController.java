@@ -13,11 +13,6 @@ public class RestController {
     @Autowired
     StudentService studentService;
 
-    @RequestMapping(value = "/homeController", method = RequestMethod.GET)
-    public String test(){
-        return "test";
-    }
-
     @GetMapping("/studenti")
     public List<Student> getStudenti() {return studentService.getStudent();}
 
@@ -25,7 +20,7 @@ public class RestController {
     public Student getStudente(@PathVariable Long id) {return studentService.getStudent(id);}
 
     @PostMapping("/studenti")
-    public void createStudente(@RequestBody Student studente){studentService.createStudent(studente);}
+    public void createStudente(@RequestBody Student studente) throws Exception {studentService.createStudent(studente);}
 
     @DeleteMapping("/studenti/{id}")
     public void deleteStudente(@PathVariable Long id){studentService.removeStudent(id);}
